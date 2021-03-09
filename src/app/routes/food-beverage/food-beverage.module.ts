@@ -7,6 +7,10 @@ const routes: Route[] = [
   {
     path: "",
     component: FoodBeverageComponent
+  },
+  {
+    path: "new-food",
+    loadChildren: () => import('../../routes/new-food/new-food.module').then(m => m.NewFoodModule)
   }
 ]
 

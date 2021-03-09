@@ -63,5 +63,17 @@ export const AdminLayoutRoutes: Routes = [
     {
         path: 'food-beverage',
         loadChildren: () => import('../../routes/food-beverage/food-beverage.module').then(m => m.FoodBeverageModule)
-    }
+    },
+    {
+        path: 'game',
+        loadChildren: () => import('../../routes/game/game.module').then(m => m.GameModule)
+    },
+    {
+        path: 'room',
+        loadChildren: () => import('../../routes/room/room.module').then(m => m.RoomModule)
+    },
+    {
+        path: 'transportation',
+        loadChildren: () => import('../../routes/transportation/transportation.module').then(m => m.TransportationModule)
+    },
 ];
