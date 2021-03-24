@@ -25,10 +25,10 @@ export class EditLevelBenefitsComponent implements OnInit {
 
   newBenefit(): FormGroup {
     return this.formBuilder.group({
-      id: new FormControl(null),
-      from: new FormControl(null),
-      to: new FormControl(null),
-      reward: new FormControl(null),
+      id: [null],
+      from: [null],
+      to: [null],
+      reward: [null],
     })
   }
 

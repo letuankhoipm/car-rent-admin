@@ -7,11 +7,24 @@
                     <p class="card-category">Change or modify level benefits</p>
                 </div>
                 <div class="card-body table-responsive">
-
+                    <form [formGroup]="levelBenefitsForm">
+                        <div formArrayName="levelBenefits" class="">
+                            <div [formGroupName]="i" *ngFor="let benefit of benefits.controls; let i = index">
+                                <div >
+                                    <input type="text" formControlName="reward">
+                                    <button (click)="removeBenefit(i)">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary">
+                    <button (click)="onSubmit()" class="btn btn-primary">
                         Save
+                    </button>
+                    {{this.levelBenefitsForm.value | json}}
+                    <button (click)="addBenefit()" class="btn btn-primary">
+                        add
                     </button>
                 </div>
             </div>
