@@ -19,7 +19,7 @@ export class MembershipComponent implements OnInit {
   }
 
   editBenefit = (id) => {
-    this.router.navigate([`/membership/edit-level-benefits/${id}`])
+    this.router.navigate([`/membership/edit-level-benefits/${id}`]);
   }
 
   getLevel = () => {
