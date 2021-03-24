@@ -7,25 +7,74 @@
                     <p class="card-category">Change or modify level benefits</p>
                 </div>
                 <div class="card-body table-responsive">
+                    <h5 class="font-weight-bold">
+                        {{levelDetail?.name}}
+                    </h5>
+                    <p>
+                        {{levelDetail?.description}}
+                    </p>
+                    <hr>
+                    <p>
+                        Edit level benefits of
+                        {{levelDetail?.name}}
+                    </p>
                     <form [formGroup]="levelBenefitsForm">
+                        <div class="row">
+                            <div class="col-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput formControlName="description" type="text" placeholder="Description">
+                                </mat-form-field>
+                            </div>
+                        </div>
                         <div formArrayName="levelBenefits" class="">
-                            <div [formGroupName]="i" *ngFor="let benefit of benefits.controls; let i = index">
-                                <div >
-                                    <input type="text" formControlName="reward">
-                                    <button (click)="removeBenefit(i)">Remove</button>
+                            <div [formGroupName]="i" *ngFor="let benefit of benefitsControls.controls; let i = index">
+                                <div class="card p-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput formControlName="id" type="text" placeholder="Id">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput formControlName="from" type="text" placeholder="From">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput formControlName="to" type="text" placeholder="To">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput formControlName="reward" type="text"
+                                                    placeholder="Reward">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-12 text-right">
+                                            <button class="btn btn-delete w-25" (click)="removeBenefit(i)">
+                                                <i class="material-icons cursor-pointer">delete</i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="card-footer">
-                    <button (click)="onSubmit()" class="btn btn-primary">
-                        Save
-                    </button>
-                    {{this.levelBenefitsForm.value | json}}
-                    <button (click)="addBenefit()" class="btn btn-primary">
-                        add
-                    </button>
+                    <div class="row w-100">
+                        <div class="col-6">
+                            <button (click)="addBenefit()" class="btn btn-dark w-100">
+                                add
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button (click)="onSubmit()" class="btn btn-primary w-100">
+                                Save
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

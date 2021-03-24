@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { interceptors } from './interceptors';
 
 
 import { AppRoutingModule } from './app.routing';
@@ -33,7 +34,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AdminLayoutComponent,
 
   ],
-  providers: [],
+  providers: [...interceptors],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

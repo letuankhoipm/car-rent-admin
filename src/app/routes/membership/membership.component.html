@@ -7,28 +7,32 @@
                     <p class="card-category">Manage your game list</p>
                 </div>
                 <div class="card-body table-responsive">
-                    <table class="table table-hover">
+                    <table *ngIf="levels" class="table table-hover">
                         <thead class="text-primary">
                             <th>ID</th>
                             <th>Level</th>
                             <th></th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Niger</td>
+                            <tr *ngFor="let level of levels">
                                 <td>
-                                    <i (click)="editBenefit(1)" class="material-icons cursor-pointer">create</i>
+                                    {{level.id}}
+                                </td>
+                                <td>
+                                    {{level.name}}
+                                </td>
+                                <td>
+                                    <i (click)="editBenefit(level.id)" class="material-icons cursor-pointer">create</i>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                     <button class="btn btn-primary">
                         Add new game
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
