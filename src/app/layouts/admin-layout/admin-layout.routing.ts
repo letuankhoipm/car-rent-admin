@@ -80,4 +80,8 @@ export const AdminLayoutRoutes: Routes = [
         path: 'membership',
         loadChildren: () => import('../../routes/membership/membership.module').then(m => m.MembershipModule)
     },
+    {
+        path: 'upload-file',
+        loadChildren: () => import('../../routes/upload-file/upload-file.module').then(m => m.UploadFileModule)
+    }
 ];

@@ -21,7 +21,7 @@ export class BaseService {
 
   post<T = {}>(body, url, options?) {
     return this.http
-      .post<T>(url, { ...body }, { ...this.customHeaders, ...options })
+      .post<T>(url, body, { ...this.customHeaders, ...options })
       .pipe(catchError(this.handleError)) as Observable<T>;
   }
 
