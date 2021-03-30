@@ -1,9 +1,15 @@
+FROM endeveit/docker-jq AS deps
+COPY package.json /tmp
+
+RUN jq '{name, version, dependencies, devDependencies, engines, scripts: (.scripts | { "build-prod" , postinstall }) }' < /tmp/package.json > /tmp/deps.json
+
 FROM node:12-alpine as builder
 WORKDIR /usr/src/app/
-COPY package*.json ./
+COPY --from=deps /tmp/deps.json ./package.json
+COPY package-lock.json ./
 RUN npm ci --unsafe-perm
 COPY . .
-RUN npm run build -- --prod --build-optimizer
+RUN npm run build-prod
 
 FROM nginx:1.19-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
