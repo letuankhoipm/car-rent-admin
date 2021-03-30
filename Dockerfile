@@ -3,7 +3,7 @@ WORKDIR /usr/src/app/
 COPY package*.json ./
 RUN npm ci --unsafe-perm
 COPY . .
-RUN npm run build -- --prod --build-optimizer
+RUN npm run build-prod
 
 FROM nginx:1.19-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
