@@ -10,6 +10,7 @@ import { Login } from 'app/redux/actions/auth.action';
 })
 export class LoginComponent implements OnInit {
 
+  logo = 'assets/img/logo.png'
   loginForm: FormGroup;
 
   constructor(
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.loginForm.valid){
+    if (this.loginForm.valid) {
       this.store.dispatch(new Login(this.loginForm.value));
     }
   }

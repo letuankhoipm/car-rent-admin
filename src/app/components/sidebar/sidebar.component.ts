@@ -2,19 +2,26 @@ import { Component, OnInit } from '@angular/core';
 
 declare const $: any;
 declare interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+  path: string;
+  title: string;
+  icon: string;
+  class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/food-beverage', title: 'Food & Beverage',  icon: 'restaurant_menu', class: '' },
-    { path: '/game', title: 'Games',  icon: 'extension', class: '' },
-    { path: '/room', title: 'Room Booking',  icon: 'room_service', class: '' },
-    { path: '/transportation', title: 'Transportation',  icon: 'directions_car_filled', class: '' },
-    { path: '/membership', title: 'Membership Programs',  icon: 'account_balance_wallet', class: '' },
+  { path: '/dashboard', title: 'Dashboard', icon: 'dashboard', class: '' },
+  { path: '/food-beverage', title: 'Warehouse', icon: 'restaurant_menu', class: '' },
+  { path: '/game', title: 'Games', icon: 'extension', class: '' },
+  { path: '/room', title: 'Room Booking', icon: 'room_service', class: '' },
+  { path: '/transportation', title: 'Transportation', icon: 'directions_car_filled', class: '' },
+  { path: '/membership', title: 'Membership Programs', icon: 'account_balance_wallet', class: '' },
+  { path: '/upload-file', title: 'Update Error Point', icon: 'description', class: '' },
 ];
+
+export const ROUTES_RECEPTIONIST: RouteInfo[] = [
+  { path: '/room', title: 'Room Orders', icon: 'room_service', class: '' },
+  { path: '/transportation', title: 'Car Orders', icon: 'directions_car_filled', class: '' },
+  { path: '/redemption', title: 'Redemption Orders', icon: 'emoji_events', class: '' },
+]
 
 @Component({
   selector: 'app-sidebar',
@@ -30,9 +37,9 @@ export class SidebarComponent implements OnInit {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
-      if ($(window).width() > 991) {
-          return false;
-      }
-      return true;
+    if ($(window).width() > 991) {
+      return false;
+    }
+    return true;
   };
 }
