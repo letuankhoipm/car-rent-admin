@@ -3,13 +3,15 @@
   "version": "2.5.0",
   "license": "MIT",
   "scripts": {
+    "postinstall":"ngcc",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o",
+    "build-prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod --build-optimizer"
   },
   "engines": {
     "node": "6.11.1",
