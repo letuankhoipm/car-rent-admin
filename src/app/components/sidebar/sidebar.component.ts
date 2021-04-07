@@ -9,19 +9,11 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
   { path: '/dashboard', title: 'Dashboard', icon: 'dashboard', class: '' },
-  { path: '/food-beverage', title: 'Warehouse', icon: 'restaurant_menu', class: '' },
-  { path: '/game', title: 'Games', icon: 'extension', class: '' },
-  { path: '/room', title: 'Room Booking', icon: 'room_service', class: '' },
-  { path: '/transportation', title: 'Transportation', icon: 'directions_car_filled', class: '' },
-  { path: '/membership', title: 'Membership Programs', icon: 'account_balance_wallet', class: '' },
-  { path: '/upload-file', title: 'Update Error Point', icon: 'description', class: '' },
+  { path: '/membership', title: 'Member', icon: 'user', class: '' },
+  { path: '/cars', title: 'Cars', icon: 'extension', class: '' },
+  { path: '/brand', title: 'Brand', icon: 'room_service', class: '' },
+  { path: '/statistical', title: 'Statistic', icon: 'directions_car_filled', class: '' },
 ];
-
-export const ROUTES_RECEPTIONIST: RouteInfo[] = [
-  { path: '/room', title: 'Room Orders', icon: 'room_service', class: '' },
-  { path: '/transportation', title: 'Car Orders', icon: 'directions_car_filled', class: '' },
-  { path: '/redemption', title: 'Redemption Orders', icon: 'emoji_events', class: '' },
-]
 
 @Component({
   selector: 'app-sidebar',

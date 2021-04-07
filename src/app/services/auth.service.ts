@@ -9,7 +9,7 @@ import { environment as env } from '../../environments/environment';
 export class AuthService extends BaseService {
 
   private TOKEN_KEY = 'token_key';
-  private loginEndpoint = `${env.API_URL}/auth/login`;
+  private loginEndpoint = `${env.API_URL}/admin/login`;
   private profileEndpoint = `${env.API_URL}/profile`;
 
 
