@@ -11,18 +11,16 @@ import { Login } from 'app/redux/actions/auth.action';
 export class LoginComponent implements OnInit {
 
   logo = 'assets/img/logo.png'
-  loginForm: FormGroup;
+  loginForm: FormGroup = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  });
 
   constructor(
     private store: Store
   ) { }
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
-    })
-    this.loginForm.valueChanges.subscribe(value => console.log(value))
   }
 
   onSubmit() {
