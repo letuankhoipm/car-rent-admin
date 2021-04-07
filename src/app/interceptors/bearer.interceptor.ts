@@ -11,7 +11,7 @@ import { environment as env } from '../../environments/environment';
 
 @Injectable()
 export class BearerInterceptor implements HttpInterceptor {
-    public token = env.TOKEN;
+    public token = '';
     constructor(private authService: AuthService) {
         // this.store.select(selectAuthState).subscribe((state: any) => {
         //     this.token = state.accessToken;
