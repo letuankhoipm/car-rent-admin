@@ -2,6 +2,8 @@ import { Store } from '@ngrx/store';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Login } from 'app/redux/actions/auth.action';
+import { Router } from '@angular/router';
+import { selectAuthState } from 'app/redux/app.state';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,8 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private store: Store
+    private store: Store,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +29,11 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       this.store.dispatch(new Login(this.loginForm.value));
+      this.store.select(selectAuthState).subscribe((state: any) => {
+        if (state.accessToken) {
+          this.router.navigate(['/dashboard'])
+        }
+      });
     }
   }
 }

@@ -8,14 +8,16 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
+import { Store } from '@ngrx/store';
+import { selectAuthState } from 'app/redux/app.state';
 
 @Injectable()
 export class BearerInterceptor implements HttpInterceptor {
-    public token = '';
-    constructor(private authService: AuthService) {
-        // this.store.select(selectAuthState).subscribe((state: any) => {
-        //     this.token = state.accessToken;
-        // });
+    public token;
+    constructor(private authService: AuthService, private store: Store) {
+        this.store.select(selectAuthState).subscribe((state: any) => {
+            this.token = state.accessToken;
+        });
     }
 
     intercept(
