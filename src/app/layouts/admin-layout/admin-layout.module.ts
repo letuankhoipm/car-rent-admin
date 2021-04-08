@@ -1,4 +1,3 @@
-import { UploadFileModule } from './../../routes/upload-file/upload-file.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -31,7 +30,6 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    UploadFileModule
   ],
   declarations: [
     DashboardComponent,

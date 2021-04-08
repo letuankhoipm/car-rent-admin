@@ -8,10 +8,6 @@ const routes: Route[] = [
   {
     path: '',
     component: MembershipComponent
-  },
-  {
-    path: 'edit-level-benefits',
-    loadChildren: () => import('../../routes/edit-level-benefits/edit-level-benefits.module').then(m => m.EditLevelBenefitsModule)
   }
 ]
 
