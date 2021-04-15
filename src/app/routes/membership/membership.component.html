@@ -7,32 +7,45 @@
                     <p class="card-category">Manage membership benefits</p>
                 </div>
                 <div class="card-body table-responsive">
-                    <table *ngIf="levels" class="table table-hover">
+                    <table *ngIf="customers" class="table table-hover">
                         <thead class="text-primary">
-                            <th>ID</th>
-                            <th>Level</th>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
                             <th></th>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let level of levels">
+                            <tr *ngFor="let customer of customers">
                                 <td>
-                                    {{level.id}}
+                                    {{customer.id}}
                                 </td>
                                 <td>
-                                    {{level.name}}
+                                    {{customer.fullName}}
                                 </td>
                                 <td>
-                                    <i (click)="editBenefit(level.id)" class="material-icons cursor-pointer">create</i>
+                                    {{customer.address}}
+                                </td>
+                                <td>
+                                    {{customer.phoneNumber}}
+                                </td>
+                                <td>
+                                    {{customer.gender}}
+                                </td>
+                                <td>
+                                    <i (click)="editBenefit(customer.id)" class="material-icons cursor-pointer">create</i>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <!-- <div class="card-footer">
+                <div class="card-footer">
                     <button class="btn btn-primary">
-                        Add new game
+                        Add new customer
                     </button>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

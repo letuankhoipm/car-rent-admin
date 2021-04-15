@@ -10,7 +10,7 @@ import { LevelService } from 'app/services/level.service';
 })
 export class MembershipComponent implements OnInit {
 
-  levels: Level[] = [];
+  customers;
 
   constructor(private router: Router, private levelService: LevelService) { }
 
@@ -24,7 +24,7 @@ export class MembershipComponent implements OnInit {
 
   getLevel = () => {
     this.levelService.getLevel().subscribe((res: any) => {
-      this.levels = res.data;
+      this.customers = res.data;
       console.log(res);
     })
   }

@@ -9,7 +9,7 @@ import { BaseService } from './base.service';
 })
 export class LevelService extends BaseService {
 
-  private levelEndpoint = `${env.API_URL}/level`;
+  private levelEndpoint = `${env.API_URL}/admin/users`;
 
   constructor(http: HttpClient) {
     super(http);
