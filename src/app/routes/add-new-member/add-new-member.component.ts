@@ -45,9 +45,6 @@ export class AddNewMemberComponent implements OnInit {
     });
   }
 
-
-
-
   ngOnInit(): void {
   }
 

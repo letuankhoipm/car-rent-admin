@@ -1,38 +1,36 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LevelDetail } from 'app/models/level.model';
-import { environment as env } from '../../environments/environment';
+import { env } from 'process';
 import { BaseService } from './base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LevelService extends BaseService {
+export class BrandService extends BaseService {
 
-  private levelEndpoint = `${env.API_URL}/admin/users`;
+  private levelEndpoint = `${env.API_URL}/admin/brands`;
 
   constructor(http: HttpClient) {
     super(http);
   }
 
-  public getCustomer() {
+  public getBrands() {
     return this.get(this.levelEndpoint);
   }
 
-  public updateCustomer = (id: number, data: any) => {
+  public updateBrand = (id: number, data: any) => {
     return this.patch(data, `${this.levelEndpoint}/${id}`);
   }
 
-  public createCustomer(data: any) {
+  public createBrand(data: any) {
     return this.post(data, `${this.levelEndpoint}`);
   }
 
-  public deleteCustomerById(id: any) {
+  public deleteBrandById(id: any) {
     return this.delete(`${this.levelEndpoint}/${id}`);
   }
 
-  public getCustomerById = (id: number) => {
+  public getBrandById = (id: number) => {
     return this.get(`${this.levelEndpoint}/${id}`);
   }
-
 }

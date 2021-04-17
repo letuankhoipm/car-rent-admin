@@ -27,11 +27,23 @@ export const AdminLayoutRoutes: Routes = [
         loadChildren: () => import('../../routes/membership/membership.module').then(m => m.MembershipModule)
     },
     {
+        path: 'brand',
+        loadChildren: () => import('../../routes/brand/brand.module').then(m => m.BrandModule)
+    },
+    {
         path: 'add-new-member',
         loadChildren: () => import('../../routes/add-new-member/add-new-member.module').then(m => m.AddNewMemberModule)
     },
     {
+        path: 'add-new-brand',
+        loadChildren: () => import('../../routes/add-new-brand/add-new-brand.module').then(m => m.AddNewBrandModule)
+    },
+    {
         path: 'edit-member',
         loadChildren: () => import('../../routes/edit-member/edit-member.module').then(m => m.EditMemberModule)
+    },
+    {
+        path: 'edit-brand',
+        loadChildren: () => import('../../routes/edit-brand/edit-brand.module').then(m => m.EditBrandModule)
     },
 ];
