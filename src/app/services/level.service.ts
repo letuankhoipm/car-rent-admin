@@ -15,6 +15,10 @@ export class LevelService extends BaseService {
     super(http);
   }
 
+  public getCustomer() {
+    return this.get(this.levelEndpoint);
+  }
+
   public updateCustomer = (id: number, data: any) => {
     return this.patch(data, `${this.levelEndpoint}/${id}`);
   }

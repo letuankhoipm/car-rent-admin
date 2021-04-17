@@ -56,9 +56,9 @@ export class AddNewMemberComponent implements OnInit {
       ...this.newMemberForm.value
     }
     console.log(req);
-    // this.levelService.createCustomer(req).subscribe((res: any) => {
-    //   console.log(res);
-    // });
+    this.levelService.createCustomer(req).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 
 }

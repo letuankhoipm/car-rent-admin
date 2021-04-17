@@ -27,4 +27,10 @@ export class MembershipComponent implements OnInit {
     })
   }
 
+  getCustomers() {
+    this.levelService.getCustomer().subscribe((res: any) => {
+      this.customers = res.data;
+    })
+  }
+
 }
