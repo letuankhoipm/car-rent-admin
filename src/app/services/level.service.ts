@@ -15,15 +15,16 @@ export class LevelService extends BaseService {
     super(http);
   }
 
-  public getLevel = () => {
-    return this.get(this.levelEndpoint);
+  public updateCustomer = (id: number, data: any) => {
+    return this.patch(data, `${this.levelEndpoint}/${id}`);
   }
 
-  public getLevelById = (id: number) => {
+  public createCustomer(data: any) {
+    return this.post(`${this.levelEndpoint}`, data);
+  }
+
+  public getCustomerById = (id: number) => {
     return this.get(`${this.levelEndpoint}/${id}`);
   }
 
-  public updateLevelBenefit = (id: number, data: LevelDetail) => {
-    return this.patch(data, `${this.levelEndpoint}/${id}`);
-  }
 }

@@ -26,4 +26,12 @@ export const AdminLayoutRoutes: Routes = [
         path: 'membership',
         loadChildren: () => import('../../routes/membership/membership.module').then(m => m.MembershipModule)
     },
+    {
+        path: 'add-new-member',
+        loadChildren: () => import('../../routes/add-new-member/add-new-member.module').then(m => m.AddNewMemberModule)
+    },
+    {
+        path: 'edit-member',
+        loadChildren: () => import('../../routes/edit-member/edit-member.module').then(m => m.EditMemberModule)
+    },
 ];

@@ -35,15 +35,15 @@
                                     {{customer.gender}}
                                 </td>
                                 <td>
-                                    <i (click)="editBenefit(customer.id)" class="material-icons cursor-pointer">create</i>
+                                    <i (click)="editCustomer(customer.id)" class="material-icons cursor-pointer">create</i>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary">
-                        Add new customer
+                    <button [routerLink]="['/add-new-member']" routerLinkActive="router-link-active"  class="btn btn-primary">
+                        Add new member
                     </button>
                 </div>
             </div>
