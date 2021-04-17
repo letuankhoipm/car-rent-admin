@@ -21,4 +21,10 @@ export class MembershipComponent implements OnInit {
     this.router.navigate([`/edit-member/${id}`]);
   }
 
+  deleteCustomer(id: any) {
+    this.levelService.deleteCustomerById(id).subscribe(res => {
+      console.log(res);
+    })
+  }
+
 }

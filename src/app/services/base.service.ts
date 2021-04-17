@@ -25,6 +25,12 @@ export class BaseService {
       .pipe(catchError(this.handleError)) as Observable<T>;
   }
 
+  delete<T = {}>(url) {
+    return this.http
+      .delete<T>(url)
+      .pipe(catchError(this.handleError)) as Observable<T>;
+  }
+
   patch<T = {}>(body, url, options?) {
     return this.http
       .patch<T>(url, { ...body }, { ...this.customHeaders, ...options })

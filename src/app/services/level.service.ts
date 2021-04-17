@@ -23,6 +23,10 @@ export class LevelService extends BaseService {
     return this.post(`${this.levelEndpoint}`, data);
   }
 
+  public deleteCustomerById(id: any) {
+    return this.delete(`${this.levelEndpoint}/${id}`);
+  }
+
   public getCustomerById = (id: number) => {
     return this.get(`${this.levelEndpoint}/${id}`);
   }

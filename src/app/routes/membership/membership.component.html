@@ -35,6 +35,9 @@
                                     {{customer.gender}}
                                 </td>
                                 <td>
+                                    <i (click)="deleteCustomer(customer.id)" class="material-icons cursor-pointer">delete</i>
+                                </td>
+                                <td>
                                     <i (click)="editCustomer(customer.id)" class="material-icons cursor-pointer">create</i>
                                 </td>
                             </tr>
