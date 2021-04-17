@@ -15,6 +15,7 @@ export class MembershipComponent implements OnInit {
   constructor(private router: Router, private levelService: LevelService) { }
 
   ngOnInit(): void {
+    this.getCustomers();
   }
 
   editCustomer = (id) => {
