@@ -31,8 +31,16 @@ export const AdminLayoutRoutes: Routes = [
         loadChildren: () => import('../../routes/brand/brand.module').then(m => m.BrandModule)
     },
     {
+        path: 'car',
+        loadChildren: () => import('../../routes/car/car.module').then(m => m.CarModule)
+    },
+    {
         path: 'add-new-member',
         loadChildren: () => import('../../routes/add-new-member/add-new-member.module').then(m => m.AddNewMemberModule)
+    },
+    {
+        path: 'add-new-car',
+        loadChildren: () => import('../../routes/add-new-car/add-new-car.module').then(m => m.AddNewCarModule)
     },
     {
         path: 'add-new-brand',
@@ -45,5 +53,9 @@ export const AdminLayoutRoutes: Routes = [
     {
         path: 'edit-brand',
         loadChildren: () => import('../../routes/edit-brand/edit-brand.module').then(m => m.EditBrandModule)
+    },
+    {
+        path: 'edit-car',
+        loadChildren: () => import('../../routes/edit-car/edit-car.module').then(m => m.EditCarModule)
     },
 ];

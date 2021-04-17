@@ -14,6 +14,7 @@ export class BrandComponent implements OnInit {
   constructor(private router: Router, private brandService: BrandService) { }
 
   ngOnInit(): void {
+    this.getBrands();
   }
 
   editBrand = (id) => {
