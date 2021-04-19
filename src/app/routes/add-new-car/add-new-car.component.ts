@@ -25,7 +25,7 @@ export class AddNewCarComponent implements OnInit {
       location: new FormControl(null),
       name: new FormControl(null),
       rentCost: new FormControl(null),
-      status: new FormControl(null),
+      image: new FormControl(null),
       fuel: new FormControl(null),
     });
   }
