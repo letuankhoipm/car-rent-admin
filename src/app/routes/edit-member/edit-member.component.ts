@@ -50,13 +50,13 @@ export class EditMemberComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = +params['id'];
-      this.getCustomerInfo();
+      this.getCustomerInfo(this.id);
       console.log(this.id);
     });
   }
 
-  getCustomerInfo() {
-    this.levelService.getCustomerById(this.id).subscribe((res: any) => {
+  getCustomerInfo(id: any) {
+    this.levelService.getCustomerById(id).subscribe((res: any) => {
       this.memberForm.patchValue({
         ...res.data
       })
