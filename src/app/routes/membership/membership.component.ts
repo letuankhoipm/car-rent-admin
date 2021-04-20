@@ -43,7 +43,7 @@ export class MembershipComponent implements OnInit {
     dialogRef.componentInstance.content = "Do you want to delete permanently this user?";
     dialogRef.componentInstance.action = "Yes";
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      result ? this.deleteCustomer(id) : null;
     });
   }
 

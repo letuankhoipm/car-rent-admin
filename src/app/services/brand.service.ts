@@ -19,7 +19,7 @@ export class BrandService extends BaseService {
   }
 
   public updateBrand = (id: number, data: any) => {
-    return this.patch(data, `${this.levelEndpoint}/${id}`);
+    return this.put(data, `${this.levelEndpoint}`);
   }
 
   public createBrand(data: any) {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ConfirmModalComponent } from 'app/modals/confirm-modal/confirm-modal.component';
 import { BrandService } from 'app/services/brand.service';
 
 @Component({
@@ -11,7 +13,7 @@ export class BrandComponent implements OnInit {
 
   brands;
 
-  constructor(private router: Router, private brandService: BrandService) { }
+  constructor(private router: Router, private brandService: BrandService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getBrands();
@@ -33,5 +35,15 @@ export class BrandComponent implements OnInit {
       console.log(this.brands);
 
     })
+  }
+
+  confirmDelete(id) {
+    const dialogRef = this.dialog.open(ConfirmModalComponent);
+    dialogRef.componentInstance.title = "Delete confirm";
+    dialogRef.componentInstance.content = "Do you want to delete permanently this car?";
+    dialogRef.componentInstance.action = "Yes";
+    dialogRef.afterClosed().subscribe(result => {
+      result ? this.deleteBrand(id) : null;
+    });
   }
 }
