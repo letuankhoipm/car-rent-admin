@@ -44,6 +44,7 @@ export class AuthEffects {
     map((res: any) => {
       // tslint:disable-next-line: no-string-literal
       if (res.statusCode === 200) {
+        this.router.navigate(['/dashboard']);
         return new LogInSuccess({ ...res.data });
       }
     }),
