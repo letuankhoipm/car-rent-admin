@@ -20,7 +20,7 @@ export class LevelService extends BaseService {
   }
 
   public updateCustomer = (id: number, data: any) => {
-    return this.put(data, `${this.levelEndpoint}/${id}`);
+    return this.put(data, `${this.levelEndpoint}`);
   }
 
   public createCustomer(data: any) {

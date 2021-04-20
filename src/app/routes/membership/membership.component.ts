@@ -39,6 +39,9 @@ export class MembershipComponent implements OnInit {
 
   confirmDelete(id) {
     const dialogRef = this.dialog.open(ConfirmModalComponent);
+    dialogRef.componentInstance.title = "Delete confirm";
+    dialogRef.componentInstance.content = "Do you want to delete permanently this user?";
+    dialogRef.componentInstance.action = "Yes";
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

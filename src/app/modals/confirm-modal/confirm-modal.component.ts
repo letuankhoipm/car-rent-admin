@@ -15,5 +15,4 @@ export class ConfirmModalComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

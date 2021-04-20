@@ -19,7 +19,7 @@ export class CarService extends BaseService {
   }
 
   public updateCar = (id: number, data: any) => {
-    return this.patch(data, `${this.carEndpoint}/${id}`);
+    return this.put(data, `${this.carEndpoint}`);
   }
 
   public createCar(data: any) {
