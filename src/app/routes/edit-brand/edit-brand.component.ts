@@ -15,7 +15,7 @@ export class EditBrandComponent implements OnInit {
 
   constructor(private brandService: BrandService, private route: ActivatedRoute) {
     this.brandForm = new FormGroup({
-      id: new FormControl({ value: null, disabled: true }),
+      id: new FormControl({ value: null }),
       name: new FormControl(null),
       logo: new FormControl(null),
       nation: new FormControl(null),

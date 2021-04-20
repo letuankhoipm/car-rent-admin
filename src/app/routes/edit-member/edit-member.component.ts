@@ -36,7 +36,7 @@ export class EditMemberComponent implements OnInit {
 
   constructor(private levelService: LevelService, private route: ActivatedRoute) {
     this.memberForm = new FormGroup({
-      id: new FormControl({ value: null, disabled: true }),
+      id: new FormControl({ value: null }),
       address: new FormControl(null),
       email: new FormControl(null),
       fullName: new FormControl(null),
