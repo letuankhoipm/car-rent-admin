@@ -51,7 +51,7 @@ export class EditCarComponent implements OnInit {
     }
     this.carService.updateCar(this.id, req).subscribe((res: any) => {
       console.log(res);
-      this.router.navigate(['/'])
+      this.router.navigate(['/car'])
     })
   }
 

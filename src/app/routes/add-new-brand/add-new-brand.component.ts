@@ -31,7 +31,7 @@ export class AddNewBrandComponent implements OnInit {
     }
     this.brandService.createBrand(req).subscribe((res: any) => {
       console.log(res);
-      this.router.navigate(['/'])
+      this.router.navigate(['/brand'])
     })
   }
 

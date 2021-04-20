@@ -52,7 +52,7 @@ export class EditBrandComponent implements OnInit {
     console.log(req);
     this.brandService.updateBrand(this.id, req).subscribe((res: any) => {
       console.log(res);
-      this.router.navigate(['/'])
+      this.router.navigate(['/brand'])
     });
   }
 

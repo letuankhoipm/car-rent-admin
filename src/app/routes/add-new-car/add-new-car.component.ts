@@ -41,7 +41,7 @@ export class AddNewCarComponent implements OnInit {
     }
     this.carService.createCar(req).subscribe((res: any) => {
       console.log(res);
-      this.router.navigate(['/'])
+      this.router.navigate(['/car'])
     })
   }
 

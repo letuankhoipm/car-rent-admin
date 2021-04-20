@@ -56,7 +56,7 @@ export class AddNewMemberComponent implements OnInit {
     console.log(req);
     this.levelService.createCustomer(req).subscribe((res: any) => {
       console.log(res);
-      this.router.navigate(['/'])
+      this.router.navigate(['/membership'])
     });
   }
 
