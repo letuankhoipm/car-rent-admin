@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BrandService } from 'app/services/brand.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class EditBrandComponent implements OnInit {
   brandForm: FormGroup;
   id: any;
 
-  constructor(private brandService: BrandService, private route: ActivatedRoute) {
+  constructor(private brandService: BrandService, private route: ActivatedRoute, private router: Router) {
     this.brandForm = new FormGroup({
       id: new FormControl({ value: null }),
       name: new FormControl(null),
@@ -45,6 +45,7 @@ export class EditBrandComponent implements OnInit {
     console.log(req);
     this.brandService.updateBrand(this.id, req).subscribe((res: any) => {
       console.log(res);
+      this.router.navigate(['/'])
     });
   }
 

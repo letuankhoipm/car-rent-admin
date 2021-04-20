@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LevelService } from 'app/services/level.service';
 
 @Component({
@@ -34,7 +34,7 @@ export class EditMemberComponent implements OnInit {
     },
   ];
 
-  constructor(private levelService: LevelService, private route: ActivatedRoute) {
+  constructor(private levelService: LevelService, private route: ActivatedRoute, private router: Router) {
     this.memberForm = new FormGroup({
       id: new FormControl({ value: null }),
       address: new FormControl(null),
@@ -70,6 +70,7 @@ export class EditMemberComponent implements OnInit {
     console.log(req);
     this.levelService.updateCustomer(this.id, req).subscribe((res: any) => {
       console.log(res);
+      this.router.navigate(['/'])
     });
   }
 

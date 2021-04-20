@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BrandService } from 'app/services/brand.service';
 import { CarService } from 'app/services/car.service';
 
@@ -19,6 +19,7 @@ export class EditCarComponent implements OnInit {
     private brandService: BrandService,
     private carService: CarService,
     private route: ActivatedRoute,
+    private router: Router
   ) {
     this.carForm = new FormGroup({
       id: new FormControl(null),
@@ -45,8 +46,9 @@ export class EditCarComponent implements OnInit {
     const req = {
       ...this.carForm.value
     }
-    this.carService.createCar(req).subscribe((res: any) => {
+    this.carService.updateCar(this.id, req).subscribe((res: any) => {
       console.log(res);
+      this.router.navigate(['/'])
     })
   }
 
