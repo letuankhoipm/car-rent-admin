@@ -1,15 +1,7 @@
-export class LoggedUser{
-    
-    id: number;
-    name: string;
-    fName: string;
-    imagePath: string;
-    role: string;
-    tokenType: string;
-    expiresIn: string;
-    accessToken: string;
-
-    get token() {
-        return `${this.tokenType} ${this.accessToken}`
-    }
+export class LoggedUser {
+    access_token: string;
+    token_type: string;
+    expires_in: string;
+    username: string;
+    users?: any;
 }

@@ -8,27 +8,18 @@ export interface ConfigurationState {
 }
 
 export interface State {
-  id: number,
-  accessToken: string,
-  expiresIn: string,
-  fName: string,
-  imagePath: string,
-  name: string,
-  role: string,
-  tokenType: string,
-  token: string
+    access_token: string;
+    token_type: string;
+    expires_in: string;
+    username: string;
+    users?: any;
 }
 
 export const initialState: LoggedUser = {
-   id: null,
-   accessToken: null,
-   expiresIn: null,
-   fName: null,
-   imagePath: null,
-   name: null,
-   role: null,
-   tokenType: null,
-   token: null
+    access_token: null,
+    token_type: null,
+    expires_in: null,
+    username: null,
 };
 
 export function reducer(state = initialState, action: StateActions.All): any {
@@ -36,29 +27,21 @@ export function reducer(state = initialState, action: StateActions.All): any {
         case StateActions.LOGIN_SUCCESS:
             return {
                 ...state,
-                id: action.payload.id,
-                accessToken: action.payload.accessToken,
-                expiresIn: action.payload.expiresIn,
-                fName: action.payload.fName,
-                imagePath: action.payload.imagePath,
-                name: action.payload.name,
-                role: action.payload.role,
-                tokenType: action.payload.tokenType
+                access_token: action.payload.access_token,
+                token_type: action.payload.token_type,
+                expires_in: action.payload.expires_in,
+                username: action.payload.username,
             };
         case StateActions.LOGIN_FAILURE:
             return { ...state, ...action.payload };
         case StateActions.LOGOUT:
             return {
                 ...state,
-                id: null,
-                accessToken: null,
-                expiresIn: null,
-                fName: null,
-                imagePath: null,
-                name: null,
-                role: null,
-                tokenType: null,
-                token: null };
+                access_token: null,
+                token_type: null,
+                expires_in: null,
+                username: null,
+            };
         case StateActions.REGISTRATIONING:
             return { ...state, isAuthenticated: false, user: null, token: null, registrationing: true, error: '' };
         case StateActions.REGISTRATION_SUCCESS:
