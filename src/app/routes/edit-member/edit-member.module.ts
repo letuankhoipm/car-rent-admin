@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Route, RouterModule } from '@angular/router';
+import { ConfirmModalModule } from 'app/modals/confirm-modal/confirm-modal.module';
 
 const routes: Route[] = [
   {
@@ -21,6 +22,7 @@ const routes: Route[] = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    ConfirmModalModule,
     MatSelectModule,
     RouterModule.forChild(routes),
   ]

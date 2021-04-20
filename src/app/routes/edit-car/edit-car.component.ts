@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ConfirmModalComponent } from 'app/modals/confirm-modal/confirm-modal.component';
 import { BrandService } from 'app/services/brand.service';
 import { CarService } from 'app/services/car.service';
 
@@ -19,7 +21,8 @@ export class EditCarComponent implements OnInit {
     private brandService: BrandService,
     private carService: CarService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) {
     this.carForm = new FormGroup({
       id: new FormControl(null),
@@ -64,5 +67,15 @@ export class EditCarComponent implements OnInit {
         ...res.data
       })
     })
+  }
+
+  confirm() {
+    const dialogRef = this.dialog.open(ConfirmModalComponent);
+    dialogRef.componentInstance.title = 'Update confirm';
+    dialogRef.componentInstance.content = 'Do you want to update this car?';
+    dialogRef.componentInstance.action = 'Yes';
+    dialogRef.afterClosed().subscribe(result => {
+      result ? this.onSave() : null;
+    });
   }
 }
