@@ -37,6 +37,12 @@ export class BaseService {
       .pipe(catchError(this.handleError)) as Observable<T>;
   }
 
+  put<T = {}>(body, url, options?) {
+    return this.http
+      .patch<T>(url, { ...body }, { ...this.customHeaders, ...options })
+      .pipe(catchError(this.handleError)) as Observable<T>;
+  }
+
   protected handleError(error: any) {
     console.log(error);
     return throwError(error);

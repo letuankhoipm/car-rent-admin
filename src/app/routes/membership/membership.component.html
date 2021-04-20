@@ -35,7 +35,7 @@
                                     {{customer.gender}}
                                 </td>
                                 <td>
-                                    <i (click)="deleteCustomer(customer.id)" class="material-icons cursor-pointer">delete</i>
+                                    <i (click)="confirmDelete(customer.id)" class="material-icons cursor-pointer">delete</i>
                                 </td>
                                 <td>
                                     <i (click)="editCustomer(customer.id)" class="material-icons cursor-pointer">create</i>
@@ -47,6 +47,9 @@
                 <div class="card-footer">
                     <button [routerLink]="['/add-new-member']" routerLinkActive="router-link-active"  class="btn btn-primary">
                         Add new member
+                    </button>
+                    <button (click)="confirmDelete(2)">
+                        sdfasdfas
                     </button>
                 </div>
             </div>
