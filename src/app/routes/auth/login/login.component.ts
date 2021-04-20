@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.store.dispatch(new Login(this.loginForm.value));
       this.store.select(selectAuthState).subscribe((state: any) => {
+        console.log(state);
+        
         if (state.accessToken) {
           this.router.navigate(['/dashboard'])
         }
