@@ -4,6 +4,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { selectAuthState } from 'app/redux/app.state';
+import { Logout } from 'app/redux/actions/auth.action';
 
 @Component({
     selector: 'app-navbar',
@@ -135,5 +136,10 @@ export class NavbarComponent implements OnInit {
             }
         }
         return 'Dashboard';
+    }
+
+    logOut(): void {
+        this.store.dispatch(new Logout());
+        localStorage.clear();
     }
 }

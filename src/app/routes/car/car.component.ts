@@ -27,6 +27,7 @@ export class CarComponent implements OnInit {
   deleteCar(id: any) {
     this.carService.deleteCarById(id).subscribe(res => {
       console.log(res);
+      this.getCars();
     })
   }
 

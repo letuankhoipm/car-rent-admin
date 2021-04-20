@@ -28,6 +28,7 @@ export class MembershipComponent implements OnInit {
   deleteCustomer(id: any) {
     this.levelService.deleteCustomerById(id).subscribe(res => {
       console.log(res);
+      this.getCustomers();
     })
   }
 
