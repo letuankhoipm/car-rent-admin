@@ -39,7 +39,7 @@ export class BaseService {
 
   put<T = {}>(body, url, options?) {
     return this.http
-      .patch<T>(url, { ...body }, { ...this.customHeaders, ...options })
+      .put<T>(url, { ...body }, { ...this.customHeaders, ...options })
       .pipe(catchError(this.handleError)) as Observable<T>;
   }
 
