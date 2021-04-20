@@ -31,8 +31,7 @@ export class NavbarComponent implements OnInit {
 
     ngOnInit() {
         this.store.select(selectAuthState).subscribe((res: any) => {
-            if (res.accessToken) {
-                console.log(res);
+            if (res) {
                 this.username = res.username;
             }
         })

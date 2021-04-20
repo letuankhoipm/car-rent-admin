@@ -24,16 +24,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.store.select(selectAuthState).subscribe((state: any) => {
-      console.log(state);
-      if (state.accessToken) {
-        this.router.navigate(['/dashboard'])
-      }
-    });
   }
 
   onSubmit() {
-    // this.router.navigate(['/dashboard'])
     if (this.loginForm.valid) {
       this.store.dispatch(new Login(this.loginForm.value));
 
