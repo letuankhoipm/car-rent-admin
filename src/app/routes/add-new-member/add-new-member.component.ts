@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LevelService } from 'app/services/level.service';
 
 @Component({
@@ -32,7 +33,7 @@ export class AddNewMemberComponent implements OnInit {
     },
   ];
 
-  constructor(private levelService: LevelService) {
+  constructor(private levelService: LevelService, private router: Router) {
     this.newMemberForm = new FormGroup({
       address: new FormControl(null),
       email: new FormControl(null),
@@ -55,6 +56,7 @@ export class AddNewMemberComponent implements OnInit {
     console.log(req);
     this.levelService.createCustomer(req).subscribe((res: any) => {
       console.log(res);
+      this.router.navigate(['/'])
     });
   }
 
