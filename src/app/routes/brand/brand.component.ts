@@ -7,7 +7,9 @@ import { BrandService } from 'app/services/brand.service';
 @Component({
   selector: 'app-brand',
   templateUrl: './brand.component.html',
-  styleUrls: ['./brand.component.css']
+  styleUrls: ['./brand.component.css'],
+  providers: [MatDialog]
+
 })
 export class BrandComponent implements OnInit {
 
@@ -39,9 +41,9 @@ export class BrandComponent implements OnInit {
 
   confirmDelete(id) {
     const dialogRef = this.dialog.open(ConfirmModalComponent);
-    dialogRef.componentInstance.title = "Delete confirm";
-    dialogRef.componentInstance.content = "Do you want to delete permanently this car?";
-    dialogRef.componentInstance.action = "Yes";
+    dialogRef.componentInstance.title = 'Delete confirm';
+    dialogRef.componentInstance.content = 'Do you want to delete permanently this car?';
+    dialogRef.componentInstance.action = 'Yes';
     dialogRef.afterClosed().subscribe(result => {
       result ? this.deleteBrand(id) : null;
     });

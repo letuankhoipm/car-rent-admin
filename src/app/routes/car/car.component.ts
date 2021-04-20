@@ -7,7 +7,8 @@ import { CarService } from 'app/services/car.service';
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css']
+  styleUrls: ['./car.component.css'],
+  providers: [MatDialog]
 })
 export class CarComponent implements OnInit {
 
